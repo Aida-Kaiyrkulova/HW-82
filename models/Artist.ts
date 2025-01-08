@@ -5,13 +5,16 @@ const Schema = mongoose.Schema;
 const ArtistSchema = new Schema({
     name: {
         type: String,
-        required: [true, 'Name is required']
+        required: true,
     },
     image: {
         type: String,
         default: null
     },
-    info: String,
+    info: {
+        type: String,
+        default: null
+    },
 });
 
 const Artist = mongoose.model('Artist', ArtistSchema);
